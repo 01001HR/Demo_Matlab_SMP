@@ -11,8 +11,6 @@
 //Jack Newton, newtonj@vt.edu
 
 const static std::string base_link = "/servo";
-const static std::string lidar_link = "/lidar";
-const static std::string camera_link = "/cam";
 const static std::string odom = "/odom";
 tf::StampedTransform trans;
 
@@ -24,8 +22,6 @@ void servo_callback(const std_msgs::Int32::ConstPtr& angle_msg)
     trans.setOrigin(tf::Vector3(0.0, 0.0, 0.0));
     trans.frame_id_ = odom;
     trans.child_frame_id_ = base_link;
-    trans.child_frame_id_ = lidar_link;
-    trans.child_frame_id_ = camera_link;
     trans.setRotation(quat);
     trans.stamp_ = ros::Time::now(); //probably not valid, need to stamp the angle on the arduino itself
 }
