@@ -1,1 +1,0 @@
-rostopic pub /command std_msgs/Int32 4
