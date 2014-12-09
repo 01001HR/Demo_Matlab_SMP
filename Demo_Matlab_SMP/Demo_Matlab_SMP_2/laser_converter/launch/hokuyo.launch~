@@ -1,7 +1,0 @@
-<launch>
-<node pkg="hokuyo_node" 
-      type="hokuyo_node" 
-      name="hokuyo">
-      <param name="port" value="/dev/ttyACM1" />
-</node>
-</launch>
